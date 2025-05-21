@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yummy</title>
+    <!-- ! logo link -->
+    <link rel="shortcut icon" href="./Image/logo.png" type="image/x-icon" />
+    <!-- ~ css links + bootstrap  -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- ~ loading page 🔃 -->
+    <div class="loading bg-black">
+      <span class="loader"></span>
+    </div>
+    <!-- ? thuis is navbar 🧭 -->
+    <nav>
+      <div class="side-nav d-flex position-fixed min-vh-100 top-0">
+        <div
+          class="nav-links d-flex flex-column justify-content-between min-vh-100 p-4"
+        >
+          <div class="links">
+            <ul class="list-unstyled overflow-hidden">
+              <li class="py-2 navSearch position-relative">Search</li>
+              <li class="py-2 navCategories position-relative">Categories</li>
+              <li class="py-2 navArea position-relative">Area</li>
+              <li class="py-2 navIngredients position-relative">Ingredients</li>
+              <li class="py-2 navcontact position-relative">Contact Us</li>
+            </ul>
+          </div>
+          <div class="nav-footer">
+            <div class="icons">
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-solid fa-globe"></i>
+            </div>
+            <div class="footer">
+              <p>Copyright Â© 2019 All Rights <br />Reserved.</p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="nav-smile d-flex flex-column justify-content-between py-4 text-center px-2 bg-white text-black"
+        >
+          <img
+            class="logo"
+            src="./Image/logo.png"
+            alt="logo hungry happy face"
+          />
+          <i class="fa-solid movingIcon fa-2x fa-align-justify"></i>
+          <div>
+            <i class="fa-solid fa-globe d-block"></i>
+            <i class="fa-solid fa-share-nodes"></i>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="row py-5 g-4 mainRow"></div>
+        </div>
+      </section>
+      <section class="heroAside d-none">
+        <div class="container">
+          <div class="row py-5 g-4 mainAsideRow"></div>
+        </div>
+      </section>
+      <!-- ! search section -->
+      <section class="search d-none">
+        <div class="container w-75">
+          <div class="row py-4">
+            <div class="col-md-6">
+              <input
+                class="form-control SearchName bg-transparent text-white"
+                type="text"
+                placeholder="Search By Name"
+              />
+            </div>
+            <div class="col-md-6">
+              <input
+                maxlength="1"
+                class="form-control searchByLetter bg-transparent text-white"
+                type="text"
+                placeholder="Search By First Letter"
+              />
+            </div>
+          </div>
+          <div class="searchResource row py-5 g-4"></div>
+        </div>
+      </section>
+      <section class="category d-none">
+        <div class="container">
+          <div class="categoryBox row py-5 g-4"></div>
+        </div>
+      </section>
+      <section class="area d-none">
+        <div class="container">
+          <div class="row py-5 g-4 areaBox areaPointer"></div>
+        </div>
+      </section>
+      <section class="Ingredients d-none">
+        <div class="container">
+          <div class="row py-5 g-4 ingredBox"></div>
+        </div>
+      </section>
+      <section class="contact d-none">
+        <div class="container">
+          <div class="row py-5 g-4" id="rowData">
+            <div
+              class="min-vh-100 d-flex justify-content-center hide align-items-center"
+            >
+              <div class="container w-75 text-center">
+                <div class="row g-4">
+                  <div class="col-md-6">
+                    <input
+                      oninput="validate(nameRegex,inputName)"
+                      type="text"
+                      class="form-control inputName"
+                      placeholder="Enter Your Name"
+                    />
+                    <div class="alert alert-danger alertName w-100 mt-2 d-none">
+                      Special characters and numbers not allowed + start with
+                      capital letter
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      oninput="validate(emailRegex,inputMail)"
+                      type="email"
+                      class="form-control inputMail"
+                      placeholder="Enter Your Email"
+                    />
+                    <div class="alert alert-danger alertMail w-100 mt-2 d-none">
+                      Email not valid *exemple@yyy.zzz
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      oninput="validate(phoneRegex,inPhone)"
+                      type="text"
+                      class="form-control inPhone"
+                      placeholder="Enter Your Phone"
+                    />
+                    <div
+                      id="phoneAlert"
+                      class="alert alert-danger alertPhone w-100 mt-2 d-none"
+                    >
+                      Enter valid Phone Number
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      oninput="validate(ageRegex,inAge)"
+                      type="number"
+                      class="form-control inAge"
+                      placeholder="Enter Your Age"
+                    />
+                    <div class="alert alert-danger alertAge w-100 mt-2 d-none">
+                      Enter valid age
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      oninput="validate(passwordRegex,inPass)"
+                      type="password"
+                      class="form-control inPass"
+                      placeholder="Enter Your Password"
+                    />
+                    <div class="alert alert-danger passAlert w-100 mt-2 d-none">
+                      Enter valid password *Minimum eight characters, at least
+                      one letter and one number:*
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      oninput="validaterepass(passwordRegex, inrepass)"
+                      type="password"
+                      class="form-control inrepass"
+                      placeholder="Repassword"
+                    />
+                    <div
+                      class="alert alert-danger repassAlert w-100 mt-2 d-none"
+                    >
+                      Enter valid repassword
+                    </div>
+                  </div>
+                </div>
+                <button
+                  disabled=""
+                  class="btn btn-outline-danger submitBtn px-2 mt-3"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+            <div
+              class="justify-content-center d-flex align-items-center min-vh-100 d-none place"
+            >
+              <h2 class="shadow-lg bg-dark w-75 h-25 text-center pt-5">
+                welcome to our website Mr/Mrs:
+                <span class="showName text-success">Ahmed</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- ? js bootstrap + jQuery -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <!-- * my js -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>
