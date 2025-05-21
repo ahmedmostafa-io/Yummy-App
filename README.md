@@ -4,7 +4,7 @@ _Yummy App_ is a modern and responsive web application for browsing and discover
 
 ## ⚡ Live Demo
 
-Check out the live version here: [Yummy App]([https://ahmedmostafa-io.github.io/yummy-App/](https://ahmedmostafa-io.github.io/Yummy-App/))
+Check out the live version here: [Yummy App]([https://ahmedmostafa-io.github.io/Yummy-App/])
 
 ---
 
